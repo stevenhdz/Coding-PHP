@@ -1,6 +1,6 @@
 <?php
 
-class DB{
+class DB {
     private $host;
     private $db;
     private $user;
@@ -10,8 +10,8 @@ class DB{
     public function __construct(){
         $this->host = 'localhost:8889';
         $this->db = 'peliculas';
-        $this->user = 'root';
-        $this->password = '';
+        $this->user = 'prueba';
+        $this->password = 'hacker2012.L';
         $this->charset = 'utf8mb4';
     }
 
@@ -22,7 +22,6 @@ class DB{
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_EMULATE_PREPARES   => false,
             ];
-            //$pdo = new PDO($connection, $this->user, $this->password, $options);
             $pdo = new PDO($connection,$this->user,$this->password);
             echo '<script language="javascript">alert("Conexion establecida");</script>';
             return $pdo;
